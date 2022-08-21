@@ -166,3 +166,12 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-dark {
 input:-webkit-autofill {
   transition: background-color 5000s ease-in-out 0s;
 }
+
+//add border collapse
+.ant-collapse-ghost > .ant-collapse-item {
+  border-top: 1px solid #e8e8e8 !important;
+  &:last-child {
+    border-bottom: 1px solid #e8e8e8 !important;
+    border-radius: 0 !important;
+  }
+}

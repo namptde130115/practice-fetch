@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  > .subscribe {
+    > span {
+      margin-bottom: 8px;
+      > strong {
+        color: var(--color-danger);
+      }
+    }
+  }
+  .social {
+    > span {
+      margin-right: 16px;
+    }
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+  }
+}

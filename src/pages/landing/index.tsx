@@ -9,13 +9,14 @@ import { How } from './How'
 import { Feature } from './Feature'
 import imgQuestion from '../../assets/images/question.png'
 import { Description } from './Description'
+import { Footer } from './Footer/index'
 export const Landing = () => {
   return (
     <div>
       <HeaderInfor />
       <Navigate />
       <Panel />
-      <Filter className={styles.filter}/>
+      <Filter className={styles.filter} />
       <div className={styles.productlist__container}>
         <CardProduct />
         <CardProduct />
@@ -34,6 +35,7 @@ export const Landing = () => {
         <img src={imgQuestion} alt="" />
       </div>
       <Description />
+      <Footer />
     </div>
   )
 }
