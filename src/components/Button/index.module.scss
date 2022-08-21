@@ -1,0 +1,14 @@
+.button__container {
+  background: transparent;
+  width: fit-content;
+  > button {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 328px;
+    height: 40px;
+    font-weight: 400;
+    font-size: 16px;
+  }
+}

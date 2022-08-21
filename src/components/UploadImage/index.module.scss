@@ -1,0 +1,87 @@
+.uploadButton {
+  > span {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+}
+
+.uploadbutton__container {
+  width: 120px;
+  height: 120px;
+  border: 1px dashed #e3e3e3;
+  border-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  &:hover {
+    border: 1px dashed #e3e3e3;
+  }
+}
+
+.upload__container {
+  background-color: transparent;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 18px;
+  > div {
+    background-color: transparent !important;
+    border: none !important;
+  }
+}
+
+.border__right {
+  border-right: 1px solid #bfbfbf;
+}
+
+span[data-descr] {
+  position: relative;
+  word-break: break-all;
+}
+
+.img__container {
+  width: 120px;
+  border-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+    &::after {
+      content: 'Change Logo';
+      color: #fff;
+      background: #232323;
+      opacity: 0.8;
+      font-size: 14px;
+      font-weight: 500;
+      position: absolute;
+      top: -5px;
+      right: 17px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  > span {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: inline-block;
+    color: #27272a;
+  }
+  > img {
+    object-fit: cover;
+    width: inherit;
+    height: 120px;
+    border-radius: 50%;
+  }
+}

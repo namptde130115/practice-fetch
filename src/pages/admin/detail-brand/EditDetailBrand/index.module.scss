@@ -1,0 +1,124 @@
+.container {
+  width: 552px;
+}
+.brandcarrow__container {
+  display: flex;
+  width: calc(100% - 40px);
+  align-items: center;
+  padding: 30px 24px;
+  border-bottom: 1px solid #f1f1f1;
+  margin: 0 20px;
+  .brandcarrow__img {
+    width: 64px;
+    height: 64px;
+    border-right: 2px solid #0fc97b;
+    padding: 0 40px;
+  }
+  .brandcarrow__quantity {
+    width: 30%;
+    margin-left: 40px;
+    > span {
+      font-weight: 500;
+      font-size: 20px;
+      color: var(--color-primary);
+    }
+    > div {
+      > span:first-child {
+        border-right: 1px solid #e3e3e3;
+      }
+    }
+  }
+  .brandcarrow__date--update {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    > span:first-child {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 32px;
+      color: var(--color-primary);
+    }
+  }
+}
+.brandcarrow__status {
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+  background: #fafafa;
+  border-radius: 4px;
+  margin-right: 10%;
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #e3e3e3;
+    margin-right: 8px;
+  }
+}
+
+.brandcarrow__status--select {
+  display: flex;
+  align-items: center;
+  background: #fafafa;
+  border-radius: 48px;
+  padding: 0 16px;
+  height: 38px;
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #e3e3e3;
+    margin-right: 8px;
+  }
+}
+
+.select__wrapper__active {
+  background: #cef7e2 !important;
+  .dot {
+    background-color: #1f7b4d !important;
+  }
+}
+
+.form__container {
+  > form {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 32px;
+    .select__wrapper {
+      background: #fafafa;
+      border-radius: 48px;
+    }
+    .form__item--half {
+      width: calc(50% - 16px);
+      > div {
+        width: 100%;
+      }
+    }
+    .form__item--full {
+      width: 100%;
+      > div {
+        width: 100%;
+      }
+    }
+    .controls__title {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 24px;
+      width: 100%;
+      height: 48px;
+      border-bottom: 1px solid #f1f1f1;
+      margin-bottom: 16px;
+    }
+    .upload__wraper {
+      margin: 8px 0 24px 0;
+      position: relative;
+      img {
+        position: relative;
+      }
+    }
+    .btn__group {
+      display: flex;
+      width: 100%;
+    }
+  }
+}
