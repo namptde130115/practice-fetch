@@ -7,6 +7,11 @@
     margin-left: 24px;
     font-weight: 400;
     font-size: 12px;
+    display: flex;
+    > div {
+      margin-right: 12px;
+      padding-top: 4px;
+    }
   }
   > div:first-child {
     border-right: 1px solid #e3e3e3;

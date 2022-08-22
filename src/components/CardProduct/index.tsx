@@ -1,30 +1,35 @@
 import styles from './index.module.scss'
-import carImg from '../../assets/images/bmwCar.png'
-import bmwLogo from '../../assets/images/bmwLogo.png'
-export const CardProduct = () => {
+import { IProduct } from '../../models/Product'
+
+interface ICardProductProps {
+  product: Partial<IProduct>
+}
+export const CardProduct = ({ product }: ICardProductProps) => {
   return (
     <div className={styles.card__container}>
       <div className={styles.img__wrapper}>
-        <img src={carImg} alt="car" />
+        <img src={product.imgUrl} alt="car" />
       </div>
-      <div className={styles.card__bottom}>
-        <span>BMW X3</span>
-        <div className={styles.price__wrapper}>
-          <span>From</span>
-          <span>$248,000</span>
-          <span>$2,302/mo</span>
-        </div>
-        <div className={styles.description__wrapper}>
-          <span>4 variants</span>
-          <span>with COE</span>
-        </div>
-        <div className={styles.logo__wrapper}>
-          <div className={styles.logo}>
-            <img src={bmwLogo} alt="bmw" />
+      {product.totalPrice && (
+        <div className={styles.card__bottom}>
+          <span>{product.name}</span>
+          <div className={styles.price__wrapper}>
+            <span>From</span>
+            <span>{`$${product.totalPrice}`}</span>
+            <span>${product.pricePerMo}/mo</span>
           </div>
-          <span>Performance Motors</span>
+          <div className={styles.description__wrapper}>
+            <span>{product.variant} variants</span>
+            {product.coe && <span>with COE</span>}
+          </div>
+          <div className={styles.logo__wrapper}>
+            <div className={styles.logo}>
+              <img src={product.logoBrandUrl} alt="bmw" />
+            </div>
+            <span>{product.storeName}</span>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }

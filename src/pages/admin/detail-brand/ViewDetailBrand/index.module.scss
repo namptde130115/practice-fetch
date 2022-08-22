@@ -2,6 +2,14 @@
   width: 552px;
   display: flex;
   flex-wrap: wrap;
+  padding-left: 24px;
+  .status__active {
+    background: #cef7e2 !important;
+  }
+  .status__wrapper {
+    border-radius: 48px;
+    width: 120px;
+  }
   .controls__title {
     font-weight: 600;
     font-size: 14px;

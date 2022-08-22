@@ -5,23 +5,43 @@
   padding: 30px 24px;
   border-bottom: 1px solid #f1f1f1;
   margin: 0 20px;
+  font-weight: 500;
+  > button {
+    margin-left: auto;
+  }
   .brandcarrow__img {
-    width: 64px;
     height: 64px;
-    border-right: 2px solid #0fc97b;
+    border-right: 2px solid #5f5f5f;
     padding: 0 40px;
   }
   .brandcarrow__quantity {
     width: 30%;
-    margin-left: 40px;
+    margin: 0 20px 0 40px;
     > span {
       font-weight: 500;
       font-size: 20px;
       color: var(--color-primary);
     }
     > div {
+      display: flex;
+      align-items: center;
+      > span + span {
+        padding: 0 8px;
+      }
       > span:first-child {
         border-right: 1px solid #e3e3e3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 8px;
+        white-space: nowrap;
+        display: inline-block;
+        height: fit-content;
+        font-weight: 400;
+        color: #8c8c8c;
+      }
+      > span:nth-child(2) {
+        white-space: nowrap;
+        color: #0f5edd;
       }
     }
   }
@@ -37,20 +57,9 @@
     }
   }
 }
-.brandcarrow__status {
-  display: flex;
-  align-items: center;
-  padding: 8px 20px;
-  background: #fafafa;
-  border-radius: 4px;
-  margin-right: 10%;
-  .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #e3e3e3;
-    margin-right: 8px;
-  }
+
+.active__brand {
+  border-right: 2px solid #0fc97b !important;
 }
 
 .brandcarrow__status--select {

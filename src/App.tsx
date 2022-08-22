@@ -21,14 +21,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="admin" element={<Dashboard />}>
+          <Route index element={<CardBrand />} />
           <Route path="car-brand" element={<CardBrand />} />
           <Route path="" element={<DetailBrand />}>
             <Route path="detail-brand" element={<ViewDetailBrand />} />
             <Route path="edit-brand" element={<EditDetailBrand />} />
           </Route>
         </Route>
-
-        {/* <Route path="*" element={<NotFoundPage />} /> */}
+        <Route path="*" element={<div>Not Found</div>} />
       </Routes>
     </BrowserRouter>
   )

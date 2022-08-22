@@ -71,7 +71,11 @@ export const UploadImage = ({ title, titleInUpload, hasBorder, className, url }:
     >
       {imageUrl ? (
         <div className={styles.img__container}>
-          <span data-descr="CHANGE LOGO"></span>
+          <div className={styles.overlay}>
+            <span>
+              CHANGE <br /> LOGO
+            </span>
+          </div>
           {title ? <span>{title}</span> : null}
           <img src={imageUrl} alt="avatar" />
         </div>

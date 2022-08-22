@@ -1,22 +1,27 @@
-import imgFeature from '../../../../assets/images/feature.png'
 import styles from './index.module.scss'
+import { IFeature } from '../../../../models'
 
-export const CardFeature = () => {
+interface ICardFeatureProps {
+  feature: Partial<IFeature>
+}
+export const CardFeature = ({ feature }: ICardFeatureProps) => {
   return (
     <div className={styles.container}>
       <div>
-        <img src={imgFeature} alt="" />
+        <img src={feature.imgUrl} alt="" />
       </div>
-      <div className={styles.bottom}>
-        <div className={styles.text__1}>
-          <span>The Palace</span>
-          <span>The Duplex</span>
+      {feature.price && (
+        <div className={styles.bottom}>
+          <div className={styles.text__1}>
+            <span>{feature.featureName}</span>
+            <span>{feature.numOfSeat}</span>
+          </div>
+          <div className={styles.text__2}>
+            <span>{feature.address}</span>
+            <span>${feature.price}</span>
+          </div>
         </div>
-        <div className={styles.text__2}>
-          <span>Lekki,phase 2</span>
-          <span>$2,000</span>
-        </div>
-      </div>
+      )}
     </div>
   )
 }

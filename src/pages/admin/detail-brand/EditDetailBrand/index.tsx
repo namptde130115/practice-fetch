@@ -1,6 +1,6 @@
 import { Button, Form, Input, Select } from 'antd'
 import clsx from 'clsx'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { UploadImage } from '../../../../components'
 import styles from './index.module.scss'
 import img from '../../../../assets/images/logoEdit.png'
@@ -17,6 +17,14 @@ export const EditDetailBrand = () => {
     console.log(value)
   }
 
+  useEffect(() => {
+    form.setFieldsValue({
+      brandName: 'Toyota',
+      status: 'active',
+      description: 'Jeep Grand Cherokee',
+    })
+  }, [])
+
   return (
     <div className={styles.container}>
       <div className={styles.form__container}>
@@ -29,7 +37,7 @@ export const EditDetailBrand = () => {
           <Form.Item label="Brand Name" name="brandName" className={styles['form__item--half']}>
             <Input placeholder="Input Content" />
           </Form.Item>
-          <Form.Item label="Brand Status" name="status" className={styles['form__item--half']}>
+          <Form.Item label="Brand Status" name="status" className={styles['form__item--half']} initialValue="active">
             <Select
               placeholder="Input Content"
               bordered={false}
@@ -37,13 +45,12 @@ export const EditDetailBrand = () => {
               className={clsx(styles.select__wrapper, {
                 [styles.select__wrapper__active]: selectStatus === 'active',
               })}
-              defaultValue="active"
               onChange={handleChangeSelect}
             >
               <Select.Option value="active">
                 <div
                   className={clsx(styles['brandcarrow__status--select'], {
-                    [styles.select__wrapper__active]: selectStatus === 'active',
+                    [styles.select__wrapper__active]: true,
                   })}
                 >
                   <div className={styles.dot} />
@@ -58,7 +65,7 @@ export const EditDetailBrand = () => {
               </Select.Option>
             </Select>
           </Form.Item>
-          <Form.Item label="Brand Description" name="desciption" className={styles['form__item--full']}>
+          <Form.Item label="Brand Description" name="description" className={styles['form__item--full']}>
             <Input.TextArea placeholder="Input Description" />
           </Form.Item>
           <div className={styles.btn__group}>

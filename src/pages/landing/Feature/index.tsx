@@ -1,6 +1,47 @@
 import { Button } from 'antd'
 import { CardFeature } from './CardFeature'
 import styles from './index.module.scss'
+import imgFeature from '../../../assets/images/feature.png'
+import advertisement from '../../../assets/images/advertisement.png'
+import { IFeature } from '../../../models'
+const mockFeatureList: Partial<IFeature>[] = [
+  {
+    id: '1',
+    featureName: 'The Palace',
+    numOfSeat: 'Duplex',
+    address: 'Lekki,phase 2',
+    price: '2,000',
+    imgUrl: imgFeature,
+  },
+  {
+    id: '2',
+    featureName: 'IVY RORY',
+    numOfSeat: 'Duplex',
+    address: 'Lekki,phase 2',
+    price: '2,000',
+    imgUrl: imgFeature,
+  },
+  {
+    id: '5',
+    imgUrl: advertisement,
+  },
+  {
+    id: '3',
+    featureName: 'The Palace',
+    numOfSeat: 'Duplex',
+    address: 'Lekki,phase 2',
+    price: '2,000',
+    imgUrl: imgFeature,
+  },
+  {
+    id: '4',
+    featureName: 'IVY RORY',
+    numOfSeat: 'Duplex',
+    address: 'Lekki,phase 2',
+    price: '2,000',
+    imgUrl: imgFeature,
+  },
+]
 export const Feature = () => {
   return (
     <div className={styles.container}>
@@ -16,11 +57,9 @@ export const Feature = () => {
         </div>
       </div>
       <div className={styles.feature__list}>
-        <CardFeature />
-        <CardFeature />
-        <CardFeature />
-        <CardFeature />
-        <CardFeature />
+        {mockFeatureList.map((feature: Partial<IFeature>) => (
+          <CardFeature key={feature.id} feature={feature} />
+        ))}
       </div>
       <div className={styles.btn__responsive}>
         <Button type="primary" danger>

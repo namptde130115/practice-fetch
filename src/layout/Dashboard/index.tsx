@@ -1,11 +1,11 @@
 import { AppstoreOutlined, MailOutlined, MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 import { Menu, MenuProps } from 'antd'
 import React, { useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
 import Logo from '../../assets/images/logo.png'
 import { ButtonCommon, IconWrap } from '../../components'
-import { SettingIcon } from '../../assets/icons'
+import { CarIcon, SettingIcon } from '../../assets/icons'
 import User from './UserInfor'
 type MenuItem = Required<MenuProps>['items'][number]
 
@@ -26,7 +26,7 @@ function getItem(
 }
 
 const items = [
-  getItem('Car Brand', 'car-brand', <MailOutlined />),
+  getItem('Car Brand', 'car-brand', <IconWrap size={16} icon={<CarIcon />} />),
   getItem('Folder', 'folder', <AppstoreOutlined />, [
     getItem('Menu Item', '1'),
     getItem('Menu Item', '2'),
@@ -36,12 +36,13 @@ const items = [
   getItem('Modules', 'modules', <MailOutlined />),
   getItem('Notification', 'notification', <MailOutlined />),
 ]
-
 export const Dashboard = () => {
-  const [current, setCurrent] = useState('1')
+  const href = window.location.pathname.split('/')[2]
+  const navigate = useNavigate()
+  const [current, setCurrent] = useState(href)
   const [collapsed, setCollapsed] = useState(false)
   const onClick: MenuProps['onClick'] = (e) => {
-    console.log('click ', e)
+    navigate(`${e.key}`)
     setCurrent(e.key)
   }
 

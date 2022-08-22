@@ -51,22 +51,25 @@ span[data-descr] {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .overlay {
+    color: #fff;
+    background: #232323;
+    opacity: 0.8;
+    font-size: 14px;
+    font-weight: 500;
+    position: absolute;
+    top: -7px;
+    right: 17px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+
+    z-index: 2;
+    display: none;
+  }
   &:hover {
-    cursor: pointer;
-    &::after {
-      content: 'Change Logo';
-      color: #fff;
-      background: #232323;
-      opacity: 0.8;
-      font-size: 14px;
-      font-weight: 500;
-      position: absolute;
-      top: -5px;
-      right: 17px;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      display: flex;
+    .overlay {
+      display: flex !important;
       justify-content: center;
       align-items: center;
     }
